@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import SearchDoctorByName from '../Components/SearchDoctorByName';
 import SearchDoctorBySpecialization from '../Components/SearchDoctorBySpecialization'; 
 import SearchResults from "../Components/SearchResults";
+import FixAppointment from "../Components/FixAppointment";
 const screens = {
     searchDoctorUI1: {
         screen: SearchDoctorByName
@@ -13,6 +14,9 @@ const screens = {
     },
     searchResults: {
         screen: SearchResults 
+    },
+    fixAppointment: {
+        screen: FixAppointment
     }
 }
 

@@ -44,7 +44,7 @@ export default function SearchDoctorByName({ navigation }) {
         />
 
         <View style={styles.button}>
-          <Button color="#1e90ff" title="Search" onPress={pressHandleNavigation}/>
+          <Button color="#1e90ff" title="Search" onPress={pressHandleNavigation} />
         </View>
       </View>
 

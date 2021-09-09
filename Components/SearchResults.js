@@ -2,14 +2,19 @@ import React from "react";
 import {
     StyleSheet,
     Text,
-    TextInput,
     SafeAreaView,
     Image,
     Button,
     View,
+    ScrollView
 } from "react-native";
 
-export default function SearchResults() {
+export default function SearchResults({ navigation }) {
+    //Onpress Handler
+    const pressHandler = () => {
+        navigation.navigate('fixAppointment');
+    }
+
     return (
         <SafeAreaView style={styles.container}>
 
@@ -32,14 +37,35 @@ export default function SearchResults() {
                 <Text style={styles.doctorSpec}>Cardiologist</Text>
             </View>
 
-            <View style={styles.sideContainer}></View>
-            <View style={styles.detailContainer}>
-                <Text style={styles.dateTime}>Thursday, September 03, 2021</Text>
-                <Text >3.00 p.m to 5.00 p.m</Text>
-                <Text >Asiri Hospital - Kandy</Text>
-                <Text >Patient Count :</Text>
-                <Button title="Search"/>
-            </View>
+            <ScrollView style={styles.scrollView}>
+                <View style={styles.scheduleCont1}>
+                    <View style={styles.sideContainer}></View>
+                    <View style={styles.detailContainer}>
+                        <Text style={styles.dateTime}>Thursday, September 03, 2021</Text>
+                        <Text style={styles.time}>3.00 p.m to 5.00 p.m</Text>
+                        <Text style={styles.location}>Asiri Hospital - Kandy</Text>
+                        <Text style={styles.patientCount}>Patient Count :</Text>
+                        <Text style={styles.patientNum}>15</Text>
+                        <View style={styles.reserveBtn}>
+                            <Button title="Reserve a slot" onPress={pressHandler} />
+                        </View>
+                    </View>
+                </View>
+
+                <View style={styles.scheduleCont2}>
+                    <View style={styles.sideContainer}></View>
+                    <View style={styles.detailContainer}>
+                        <Text style={styles.dateTime}>Thursday, September 03, 2021</Text>
+                        <Text style={styles.time}>6.00 p.m to 8.00 p.m</Text>
+                        <Text style={styles.location}>CCC - Kandy</Text>
+                        <Text style={styles.patientCount}>Patient Count :</Text>
+                        <Text style={styles.patientNum}>42</Text>
+                        <View style={styles.reserveBtn}>
+                            <Button title="Reserve a slot" />
+                        </View>
+                    </View>
+                </View>
+            </ScrollView>
 
         </SafeAreaView>
     );
@@ -98,17 +124,17 @@ const styles = StyleSheet.create({
     },
     sideContainer: {
         display: 'flex',
-        alignItems: 'center',
-        marginTop: 5,
-        height: 120,
+        marginTop: 2,
+        height: 130,
         width: 10,
         marginLeft: 10,
-        backgroundColor: "#1e90ff"
+        backgroundColor: "#1e90ff",
+        marginBottom: -10
     },
     detailContainer: {
         display: 'flex',
         backgroundColor: "white",
-        height: 120,
+        height: 130,
         marginTop: -120,
         width: '90%',
         marginLeft: 20,
@@ -119,5 +145,33 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 16,
         fontWeight: 'bold'
+    },
+    time: {
+        fontSize: 14,
+        marginTop: 8,
+        marginLeft: 10
+    },
+    location: {
+        marginLeft: 10,
+        marginTop: 5,
+        fontSize: 14,
+    },
+    patientCount: {
+        marginLeft: 220,
+        marginTop: -42
+    },
+    reserveBtn: {
+        marginTop: 20
+    },
+    patientNum: {
+        marginLeft: 260,
+        fontSize: 16
+        //marginTop: -42
+    },
+    scheduleCont2: {
+        marginTop: 15
+    },
+    scrollView: {
+        //marginHorizontal: 5,
     }
 });
