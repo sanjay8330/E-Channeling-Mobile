@@ -7,6 +7,7 @@ import {
   Image,
   Button,
   View,
+  TouchableOpacity
 } from "react-native";
 
 export default function SearchDoctorByName({ navigation }) {
@@ -15,39 +16,65 @@ export default function SearchDoctorByName({ navigation }) {
   const pressHandler = () => {
     navigation.navigate('searchDoctorUI2');
   }
+
+  //Navigate to search Results
+  const pressHandleNavigation = () => {
+    navigation.navigate('searchResults');
+  }
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.title}>
-        <Text>E-channelling - Search Doctor</Text>
+
+      <View style={styles.home}>
+        <Image style={styles.image}
+          source={require('../assets/home.png')}></Image>
       </View>
 
-      <View style={styles.tinylogo}>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../assets/logo.jpg")}
-        />
-      </View>
+      <Text style={styles.title}>E-channelling - Sri Lanka</Text>
+
+      <Text style={styles.phrase}>"Channel doctors with minimum clicks and maximum reliability"</Text>
+
+      <Text style={styles.search}>Search Doctor</Text>
 
       <View style={styles.focusContainer}>
-        <Text>Search Doctor</Text>
+
         <TextInput
           style={styles.input}
           placeholder="Doctor name"
           keyboardType="default"
         />
+
         <View style={styles.button}>
-          <Button color="green" title="Search" />
+          <Button color="#1e90ff" title="Search" onPress={pressHandleNavigation}/>
         </View>
       </View>
 
-      <View style={styles.focusContainer2}>
-        <Text style={{ color: 'blue', fontWeight: 'bold', textDecorationLine: 'underline', fontSize: 16 }} onPress={pressHandler}>Search Doctor by specialization</Text>
+      <Text style={styles.or}>or</Text>
+
+      <Text style={styles.link} onPress={pressHandler}>Search Doctor by specialization</Text>
+
+      <View style={styles.appContainer}>
+        <Text style={styles.upApp}>Upcoming Appointments</Text>
+        <Image style={styles.calander}
+          source={require('../assets/appoint.jpg')}></Image>
+        <Text style={styles.appPhrase}>You don't have any upcoming appointment.If you wish to fix an appointment Click Here!</Text>
       </View>
+
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  home: {
+    height: 0,
+    borderWidth: 2,
+    borderColor: '#1e90ff'
+  },
+  image: {
+    width: 30,
+    height: 30,
+    marginTop: 15,
+    marginLeft: 15
+  },
   container: {
     backgroundColor: "white",
     height: 650
@@ -55,38 +82,72 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     alignItems: 'center',
-    textAlignVertical: 'center', 
-    marginTop: 20
+    textAlignVertical: 'center',
+    marginTop: 20,
+    fontSize: 18
   },
-  tinyLogo: {
-    width: 220,
-    height: 100,
-    marginLeft: 80,
-    marginTop: 30
+  phrase: {
+    textAlign: 'center',
+    marginTop: 10,
+    fontSize: 12,
+    fontStyle: 'italic'
+  },
+  search: {
+    textAlign: 'center',
+    marginTop: 15,
+    fontSize: 16,
   },
   focusContainer: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 30
+    alignItems: 'center'
   },
   input: {
     height: 40,
-    width: "80%",
-    margin: 12,
+    width: "85%",
     borderWidth: 1,
     padding: 10,
+    marginTop: 15
   },
   button: {
-    width: "40%",
-    height: "10%",
-    marginTop: "5%"
+    marginTop: 20
   },
-  focusContainer2: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 40
+  or: {
+    textAlign: 'center',
+    marginTop: 15,
+    fontSize: 14,
+  },
+  link: {
+    color: 'blue',
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: 15,
+  },
+  appContainer: {
+    marginTop: 15,
+    height: 300,
+    width: '90%',
+    marginLeft: '5%',
+    borderWidth: 2
+  },
+  upApp: {
+    marginTop: 8,
+    marginLeft: 10,
+    fontSize: 14,
+    fontWeight: 'bold',
+    textDecorationLine: 'underline'
+  },
+  calander: {
+    width: '95%',
+    height: '70%',
+    marginLeft: 10,
+    marginTop: 8,
+  },
+  appPhrase: {
+    marginTop: 8,
+    textAlign: 'center'
   }
 });
 
