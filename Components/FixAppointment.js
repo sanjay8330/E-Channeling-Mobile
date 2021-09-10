@@ -6,11 +6,13 @@ import {
     Image,
     Button,
     View,
-    TextInput
+    TextInput,
+    KeyboardAvoidingView
 } from "react-native";
 
 export default function FixAppointment() {
     return (
+
         <SafeAreaView style={styles.container}>
 
             <View style={styles.home}>
@@ -44,26 +46,30 @@ export default function FixAppointment() {
 
             <Text style={styles.subHeading}>Enter your information</Text>
 
-            <View style={styles.appointmentContainer}>
-                <Text style={styles.nameLabel}>Patient Name</Text>
-                <TextInput
-                    style={styles.patientName}
-                    placeholder="Patient Name"
-                    keyboardType="default"
-                />
-                <Text style={styles.contactLabel}>Contact Number</Text>
-                <TextInput
-                    style={styles.contactNumber}
-                    placeholder="+94 7X XXX XXXX"
-                    keyboardType="numeric"
-                />
+            <KeyboardAvoidingView behavior="padding" style={styles.keyboardcontainer}>
+                <View style={styles.appointmentContainer}>
+                    <Text style={styles.nameLabel}>Patient Name</Text>
+                    <TextInput
+                        style={styles.patientName}
+                        placeholder="Patient Name"
+                        keyboardType="default"
+                    />
+                    <Text style={styles.contactLabel}>Contact Number</Text>
+                    <TextInput
+                        style={styles.contactNumber}
+                        placeholder="+94 7X XXX XXXX"
+                        keyboardType="numeric"
+                    />
 
-                <View style={styles.confirmBtn}>
-                    <Button title="Confirm Appointment" />
+                    <View style={styles.confirmBtn}>
+                        <Button title="Confirm Appointment" />
+                    </View>
+
                 </View>
-
-            </View>
+            </KeyboardAvoidingView>
         </SafeAreaView>
+
+
     );
 }
 
@@ -80,7 +86,8 @@ const styles = StyleSheet.create({
         marginLeft: 15
     },
     container: {
-        backgroundColor: "white"
+        backgroundColor: "white",
+        flex: 0
     },
     title: {
         textAlign: 'center',
@@ -154,7 +161,8 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline'
     },
     appointmentContainer: {
-        marginTop: 10
+        marginTop: 10,
+        //flex: -10
     },
     nameLabel: {
         marginLeft: 10
@@ -183,5 +191,8 @@ const styles = StyleSheet.create({
         marginTop: 20,
         width: '60%',
         marginLeft: 75
+    },
+    keyboardcontainer: {
+        flex: -100
     }
 });
