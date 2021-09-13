@@ -65,6 +65,20 @@ export default function SearchResults({ navigation }) {
                         </View>
                     </View>
                 </View>
+
+                <View style={styles.scheduleCont3}>
+                    <View style={styles.sideContainer}></View>
+                    <View style={styles.detailContainer}>
+                        <Text style={styles.dateTime}>Friday, September 04, 2021</Text>
+                        <Text style={styles.time}>3.00 p.m to 5.00 p.m</Text>
+                        <Text style={styles.location}>CCC - Kandy</Text>
+                        <Text style={styles.patientCount}>Patient Count :</Text>
+                        <Text style={styles.patientNum}>4</Text>
+                        <View style={styles.reserveBtn}>
+                            <Button title="Reserve a slot" />
+                        </View>
+                    </View>
+                </View>
             </ScrollView>
 
         </SafeAreaView>
@@ -172,6 +186,10 @@ const styles = StyleSheet.create({
         marginTop: 15
     },
     scrollView: {
-        //marginHorizontal: 5,
+        marginHorizontal: 0,
+        height: 335
+    },
+    scheduleCont3: {
+        marginTop: 15 
     }
 });
