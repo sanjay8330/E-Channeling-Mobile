@@ -10,7 +10,12 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
-export default function SearchDoctorBySpecialization() {
+export default function SearchDoctorBySpecialization({ navigation }) {
+  //Onpress Handler
+  const pressHandler = () => {
+    navigation.navigate('viewDoctors');
+  }
+
   return (
     <SafeAreaView style={styles.container}>
 
@@ -45,7 +50,7 @@ export default function SearchDoctorBySpecialization() {
             <Text style={styles.specLabel}>Cardiologist</Text>
             <Text>14 doctors available</Text>
             <View style={styles.viewBtn}>
-              <Button title="View" />
+              <Button title="View" onPress={pressHandler} />
             </View>
           </View>
         </View>

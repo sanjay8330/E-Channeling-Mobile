@@ -31,7 +31,7 @@ export default function SearchResults({ navigation }) {
 
             <View style={styles.focusContainer}>
                 <Image style={styles.docimage}
-                    source={require('../assets/pro5.jpg')}></Image>
+                    source={require('../assets/pro3.jpg')}></Image>
 
                 <Text style={styles.doctorName}>Dr. Nimal Perera</Text>
                 <Text style={styles.doctorSpec}>Cardiologist</Text>
