@@ -11,7 +11,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import Stars from 'react-native-stars'
 
 export default function ViewDoctors({ navigation }) {
-    //Onpress Handler - navigate to search files
+    //Onpress Handler - navigate to search files - test
     const pressHandler = () => {
         navigation.navigate('searchResults');
     }
