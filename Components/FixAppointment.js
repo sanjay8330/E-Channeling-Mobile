@@ -10,7 +10,12 @@ import {
     KeyboardAvoidingView
 } from "react-native";
 
-export default function FixAppointment() {
+export default function FixAppointment({ navigation }) {
+
+    //Navigate to Appointment confirmation
+    const pressHandleNavigation = () => {
+        navigation.navigate('appointmentConfirm');
+    }
     return (
 
         <SafeAreaView style={styles.container}>
@@ -62,7 +67,7 @@ export default function FixAppointment() {
                     />
 
                     <View style={styles.confirmBtn}>
-                        <Button title="Confirm Appointment" />
+                        <Button title="Confirm Appointment" onPress={pressHandleNavigation} />
                     </View>
 
                 </View>

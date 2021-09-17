@@ -6,6 +6,7 @@ import SearchDoctorBySpecialization from '../Components/SearchDoctorBySpecializa
 import SearchResults from "../Components/SearchResults";
 import FixAppointment from "../Components/FixAppointment";
 import ViewDoctors from '../Components/ViewDoctors';
+import AppointmentConfirmation from "../Components/AppointmentConfirmation";
 const screens = {
     searchDoctorUI1: {
         screen: SearchDoctorByName
@@ -21,6 +22,9 @@ const screens = {
     },
     viewDoctors: {
         screen: ViewDoctors
+    },
+    appointmentConfirm: {
+        screen: AppointmentConfirmation
     }
 }
 

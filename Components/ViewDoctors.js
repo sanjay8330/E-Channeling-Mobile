@@ -51,6 +51,8 @@ export default function ViewDoctors({ navigation }) {
                         <View style={styles.bookBtn}>
                             <Button title="View Schedule" onPress={pressHandler} />
                         </View>
+                        <Image style={styles.calenderImg}
+                            source={require('../assets/cal.jpg')}></Image>
                     </View>
                 </View>
 
@@ -73,6 +75,8 @@ export default function ViewDoctors({ navigation }) {
                         <View style={styles.bookBtn}>
                             <Button title="View Schedule" />
                         </View>
+                        <Image style={styles.calenderImg}
+                            source={require('../assets/cal.jpg')}></Image>
                     </View>
                 </View>
 
@@ -95,6 +99,8 @@ export default function ViewDoctors({ navigation }) {
                         <View style={styles.bookBtn}>
                             <Button title="View Schedule" />
                         </View>
+                        <Image style={styles.calenderImg}
+                            source={require('../assets/cal.jpg')}></Image>
                     </View>
                 </View>
 
@@ -108,6 +114,7 @@ export default function ViewDoctors({ navigation }) {
                         <Text style={styles.doctorExp}>3 years of experience</Text>
                         <View style={styles.stars}>
                             <Stars
+                                display={1.00}
                                 count={1}
                                 starSize={20}
                                 emptyStar={require('../assets/emptyStart.png')}
@@ -117,6 +124,8 @@ export default function ViewDoctors({ navigation }) {
                         <View style={styles.bookBtn}>
                             <Button title="View Schedule" />
                         </View>
+                        <Image style={styles.calenderImg}
+                            source={require('../assets/cal.jpg')}></Image>
                     </View>
                 </View>
 
@@ -215,15 +224,21 @@ const styles = StyleSheet.create({
     },
     rating: {
         marginLeft: 140,
-        marginTop: -20
+        marginTop: -22
     },
     bookBtn: {
-        width: 150,
+        width: 125,
         marginTop: 2,
-        marginLeft: 185
+        marginLeft: 170
     },
     stars2: {
         marginTop: 10,
         marginLeft: -90
+    },
+    calenderImg: {
+        width: 35,
+        height: 35,
+        marginLeft: 298,
+        marginTop: -37
     }
 });

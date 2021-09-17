@@ -46,6 +46,10 @@ export default function SearchDoctorByName({ navigation }) {
         <View style={styles.button}>
           <Button color="#1e90ff" title="Search" onPress={pressHandleNavigation} />
         </View>
+        <View style={styles.buttonImg}>
+          <Image style={styles.searchImg}
+            source={require('../assets/searchIcon.jpg')}></Image>
+        </View>
       </View>
 
       <Text style={styles.or}>or</Text>
@@ -110,7 +114,14 @@ const styles = StyleSheet.create({
     marginTop: 15
   },
   button: {
-    marginTop: 20
+    marginTop: 20,
+    width: 160
+  },
+  searchImg: {
+    width: 30,
+    height: 30,
+    marginLeft: 200,
+    marginTop: -32,
   },
   or: {
     textAlign: 'center',
